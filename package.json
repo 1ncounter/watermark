@@ -1,6 +1,6 @@
 {
   "name": "@lct/watermark",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "watermark for website on the page.",
   "main": "index.js",
   "repository": {
