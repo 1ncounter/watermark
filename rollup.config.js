@@ -6,21 +6,23 @@ const resolve = p => path.resolve(__dirname, p)
 const packageOptions = require(resolve('package.json'))
 const name = 'Watermark'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const configs = {
   esm: {
-    file: resolve(`dist/${name}.esm-bundler.js`),
+    file: resolve(`dist/${name}.esm-bundler${isProd ? '.prod' : ''}.js`),
     format: `es`
   },
   cjs: {
-    file: resolve(`dist/${name}.cjs.js`),
+    file: resolve(`dist/${name}.cjs${isProd ? '.prod' : ''}.js`),
     format: `cjs`
   },
   global: {
-    file: resolve(`dist/${name}.global.js`),
+    file: resolve(`dist/${name}.global${isProd ? '.prod' : ''}.js`),
     format: `iife`
   },
   'esm-browser': {
-    file: resolve(`dist/${name}.esm-browser.js`),
+    file: resolve(`dist/${name}.esm-browser${isProd ? '.prod' : ''}.js`),
     format: `es`
   }
 }
@@ -42,18 +44,15 @@ const rollupConfig = createConfig(outputOptions)
 export default rollupConfig
 
 function createConfig(output) {
-  const shouldEmitDeclarations = process.env.NODE_ENV === 'production'
-
   const tsPlugin = ts({
-    check: process.env.NODE_ENV === 'production',
+    check: isProd,
     tsconfig: resolve('tsconfig.json'),
     cacheRoot: resolve('node_modules/.rts2_cache'),
     tsconfigOverride: {
       compilerOptions: {
-        declaration: shouldEmitDeclarations,
-        declarationMap: shouldEmitDeclarations
+        declaration: isProd
       },
-      exclude: ['**/__tests__', 'test-dts']
+      exclude: ['**/__tests__']
     }
   })
 
@@ -61,7 +60,7 @@ function createConfig(output) {
 
   const plugins = [tsPlugin]
 
-  if (process.env.NODE_ENV === 'production') {
+  if (isProd) {
     plugins.push(terserPlugin)
   }
 
