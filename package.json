@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "watermark for website on the page.",
   "main": "index.js",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/1ncounter/watermark"
+  },
   "scripts": {
     "dev": "rollup -wc",
     "build": "rollup -c",
