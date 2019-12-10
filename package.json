@@ -1,0 +1,32 @@
+{
+  "name": "watermark",
+  "version": "1.0.0",
+  "description": "watermark for website on the page.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -wc",
+    "build": "rollup -c",
+    "test": "jest"
+  },
+  "formats": [
+    "global"
+  ],
+  "keywords": [
+    "watermark"
+  ],
+  "author": "1ncounter",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "rollup": "^1.27.8",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "resize-observer-polyfill": "^1.5.1"
+  }
+}
