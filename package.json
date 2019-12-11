@@ -1,6 +1,6 @@
 {
-  "name": "@lct/watermark",
-  "version": "3.0.0",
+  "name": "@1ncounter/watermark",
+  "version": "1.0.2",
   "description": "watermark for website on the page.",
   "main": "index.js",
   "repository": {
@@ -18,7 +18,12 @@
     "watermark"
   ],
   "author": "1ncounter",
-  "license": "ISC",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "cross-env": "^6.0.3",

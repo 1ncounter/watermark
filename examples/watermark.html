@@ -23,9 +23,10 @@
     <script src="../dist/watermark.global.js"></script>
     <script>
       const mark = Watermark.create({
-        alpha: 0.5
+        alpha: 0.5,
+        color: '#fff'
       })
-      mark.mount('app')
+      mark.mount(document.querySelector('#app'))
     </script>
   </body>
 </html>
