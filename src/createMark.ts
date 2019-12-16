@@ -10,7 +10,6 @@ export const createMark: CreateMark = options => {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin: ${options.spacing}px;
     width: ${options.width}px;
     height: ${options.height}px;
     opacity: ${options.alpha};

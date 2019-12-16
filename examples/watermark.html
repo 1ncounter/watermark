@@ -7,12 +7,8 @@
     <title>Document</title>
     <style>
       #app {
-        background: #000;
-      }
-      #block {
-        width: 500px;
-        height: 600px;
-        background: #f00;
+        background: #fff;
+        height: 700px;
       }
     </style>
   </head>
@@ -20,11 +16,18 @@
     <div id="app">
       <div id="block"></div>
     </div>
-    <script src="../dist/watermark.global.js"></script>
+    <script src="../dist/Watermark.global.js"></script>
     <script>
       const mark = Watermark.create({
-        alpha: 0.5,
-        color: '#fff'
+        spacing: {
+          x: 100,
+          y: 150
+        },
+        width: 200,
+        height: 40,
+        img: './mark.png',
+        alpha: 0.4,
+        angle: 45
       })
       mark.mount(document.querySelector('#app'))
     </script>

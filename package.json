@@ -1,6 +1,6 @@
 {
   "name": "@1ncounter/watermark",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "watermark for website on the page.",
   "main": "index.js",
   "repository": {

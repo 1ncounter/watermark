@@ -3,17 +3,22 @@ import { removeNode } from './apiRemove'
 import { CreateMark } from './createMark'
 import { createAttributesObserver, createResizeObserver } from './observer'
 
+type SpacingObj = {
+  x: number
+  y: number
+}
+
 export interface Options {
   text?: string
   img?: string
-  spacing?: number
-  width?: number
-  height?: number
-  fontSize?: number
-  color?: string
-  fontFamily?: string
-  alpha?: number
-  angle?: number
+  spacing: number | SpacingObj
+  width: number
+  height: number
+  fontSize: number
+  color: string
+  fontFamily: string
+  alpha: number
+  angle: number
   force?: boolean
   resize?: boolean
   createMark?: CreateMark
@@ -22,7 +27,7 @@ export interface Options {
 export const defaultOptions: Options = {
   width: 150,
   height: 50,
-  spacing: 0,
+  spacing: 10,
   fontFamily: 'Helvetica, "PingFang SC", "Microsoft YaHei", "微软雅黑"',
   color: '#000000',
   fontSize: 24,
@@ -40,7 +45,7 @@ interface WaterMark {
 
 const CONTAINER_ID = 'watermark_container'
 
-export function create(options?: Options): WaterMark {
+export function create(options: Partial<Options> = {}): WaterMark {
   const mergeOptions = Object.assign({}, defaultOptions, options)
 
   let wrapContainer: HTMLElement
