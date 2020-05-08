@@ -9,6 +9,6 @@ export const removeNode = (container: string | HTMLElement) => {
 
   if (node) {
     const parentNode = node.parentNode
-    parentNode!.removeChild(node)
+    if (parentNode) parentNode.removeChild(node)
   }
 }

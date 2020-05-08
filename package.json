@@ -1,6 +1,6 @@
 {
   "name": "@1ncounter/watermark",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "watermark for website on the page.",
   "main": "index.js",
   "repository": {
@@ -33,7 +33,7 @@
     "rollup-plugin-terser": "^5.1.2",
     "rollup-plugin-typescript2": "^0.25.3",
     "ts-jest": "^24.2.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "resize-observer-polyfill": "^1.5.1"

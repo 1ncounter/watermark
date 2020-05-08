@@ -20,6 +20,7 @@ export const createMark: CreateMark = options => {
   const textStyle = `
     font-size: ${options.fontSize}px;
     font-family: ${options.fontFamily};
+    text-align: center;
     color: ${options.color};
     overflow-wrap: break-word;
     word-wrap: break-word;

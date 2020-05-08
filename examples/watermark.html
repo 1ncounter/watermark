@@ -18,6 +18,7 @@
     </div>
     <script src="../dist/Watermark.global.js"></script>
     <script>
+      const node = document.querySelector('#app')
       const mark = Watermark.create({
         spacing: {
           x: 100,
@@ -25,11 +26,11 @@
         },
         width: 200,
         height: 40,
-        img: './mark.png',
+        img: './mark.jpeg',
         alpha: 0.4,
         angle: 45
       })
-      mark.mount(document.querySelector('#app'))
+      mark.mount(node)
     </script>
   </body>
 </html>
