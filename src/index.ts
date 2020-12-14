@@ -3,6 +3,12 @@ import { removeNode } from './apiRemove'
 import { CreateMark } from './createMark'
 import { createAttributesObserver, createResizeObserver } from './observer'
 
+interface ResizeObserver {
+  observe(target: Element): void
+  unobserve(target: Element): void
+  disconnect(): void
+}
+
 type SpacingObj = {
   x: number
   y: number
@@ -33,10 +39,10 @@ export const defaultOptions: Options = {
   fontSize: 24,
   alpha: 0.15,
   angle: 30,
-  resize: true
+  resize: true,
 }
 
-interface WaterMark {
+export interface WaterMark {
   mount: Function
   load: Function
   unload: Function
@@ -114,6 +120,6 @@ export function create(options: Partial<Options> = {}): WaterMark {
     mount,
     load,
     unload,
-    unMount
+    unMount,
   }
 }
