@@ -2,7 +2,7 @@ import { Options } from './index'
 import { createMark } from './createMark'
 
 export const loadMarks = (container: HTMLElement, options: Options) => {
-  let shadowRoot
+  
   const root = document.createElement('div')
   const styleText = `
     position: absolute;
@@ -19,11 +19,7 @@ export const loadMarks = (container: HTMLElement, options: Options) => {
   container.appendChild(root)
 
   // shadow dom compatibility
-  if (document.body.attachShadow) {
-    shadowRoot = root.attachShadow({ mode: 'closed' })
-  } else {
-    shadowRoot = root
-  }
+  const shadowRoot = root.attachShadow({ mode: 'closed' })
 
   const createMarkFunc = options.createMark ? options.createMark : createMark
   const { width, height } = root.getBoundingClientRect()
